@@ -1,0 +1,48 @@
+body {
+  font-family: sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  /* padding: 5px; */
+  font-size: 1.2em;
+}
+
+.child_one {
+  /* width: calc(100% - 50rem); */
+  width: 75%;
+  height: calc(50% - 20%);
+  font-size: 0.75em;
+  animation: myopacity 2s linear 0s 1 normal;
+}
+
+@keyframes myopacity {
+  0% {
+    opacity: 0%;
+  }
+  75% {
+    opacity: 20%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+@keyframes myleftmovement {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 150px;
+  }
+}
+
+.sidebar {
+  display: none;
+  background: lightgray;
+  width: 150px;
+  height: 100%;
+  position: absolute;
+  z-index: 10;
+  animation: myleftmovement 0.1s linear 0s 1 normal;
+}
