@@ -131,9 +131,12 @@ export class Stack {
   }
 
   peek() {
+    if (this.root == null) return null;
+
     let next = this.root;
     let trial = 0,
       maxtry = 20;
+
     while (next.next !== null && maxtry > trial) {
       next = next.next;
       trial += 1;
