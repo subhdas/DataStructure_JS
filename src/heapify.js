@@ -15,6 +15,25 @@
       this.heapify();
     }
 
+    heap_sort() {
+      let arr = [];
+      while (this.data.length > 0) {
+        arr.push(this.delete());
+      }
+      return arr;
+    }
+
+    //delete data
+    delete() {
+      let val = this.data[0],
+        len = this.data.length;
+      this.data[0] = this.data[this.data.length - 1];
+      this.data.splice(this.data.length - 1, 1);
+      this.heapify();
+      // this.data.length = len - 1;
+      return val;
+    }
+
     swap(st_ind, end_ind) {
       let temp = this.data[st_ind];
       this.data[st_ind] = this.data[end_ind];
@@ -51,7 +70,7 @@
       //   console.log(" printing elem ", i, p);
       // });
 
-      console.log("FINAL HEAP DATA ", this.data, this.trial);
+      console.log("FINAL HEAP DATA ", this.data.slice(0), this.trial);
     }
   } // end of max_heap
 
@@ -71,7 +90,20 @@
     mxh.push(220);
     mxh.push(75);
 
+    mxh.push(101);
+    mxh.push(432);
+    mxh.push(212);
+    mxh.push(755);
+
     mxh.print_heap();
+
+    // mxh.delete();
+    // mxh.print_heap();
+
+    // mxh.delete();
+    // mxh.print_heap();
+
+    console.log("heap sorted values ", mxh.heap_sort());
   }
 
   tasks_heap();
